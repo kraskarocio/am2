@@ -1,0 +1,191 @@
+\section{Integrales de línea}
+\subsection{Curvas}
+\begin{itemize}
+    \item Dada la curva $C$ de ecuación $\vec{X} = \vec{g}(t)$ con $t \in I$ , habíamos definido que un punto $\vec{A}$, $\vec{A}=\vec{g}(t_0)$ es \textbf{punto regular} de la
+misma cuando queda definida $\vec{g} \, '(t_0)$ y $\vec{g} \, '(t_0) \neq 0$. La \textbf{curva es regular} cando todos sus puntos lo son.
+    \item Se dice que la \textbf{curva es suave} cuando es regular $\vec{g} \, '$ es continua en $I$.
+    \item Recordemos que $C$ es un \textbf{arco de curva} cuando el intervalo $I$ es cerrado y acotado, del tipo $I=[a,b]$.
+     Vamos a considerar que un \textbf{arco de curva es suave} cuando $\vec{g} \, '$ es continua y no nula en un intervalo abierto
+que contenga al $[a,b]$.
+    \item Se dice que un \textbf{arco de curva es suave a trozos} cuando se lo puede subdividir en una cantidad finita de arcos de curvas suaves.
+\end{itemize}
+\subsubsection*{Ejemplo}
+$\vec{X}=(3cos(t), 3sen(t))$ con $0 \leq t \leq 2 \pi$ es la ecuación vectorial de un arco de curva suave.
+Ya que, $\vec{g} \, '(t) = (-3sen(t), 3cos(t))$ es continua en $R\| \vec{g} \, ' \|$ y, por lo tanto, en $[0, 2 \pi] \in R$. Observe que las componentes son continuas (funciones trigonométricas).
+Además $\vec{g} \, '(t) \neq 0$, $\forall t \in R$, pues el Seno y Coseno no pueden ser ambos nulos para un mismo valor de $t$, dado que $sen²(t)+ cos²(t)=1$
+ 
+\subsection{Abscisa curvilínea}
+\begin{itemize}
+    \item Diferencial escalar de longitud de arco de curva: $\| \vec{g} \, '(t) \|  \, ds = \| \vec{g} \, '(t) \| \, dt$
+    \item Diferencial vectorial de longitud de arco de curva: $d \vec{s} = ds \hat{T} = \vec{g} \, '(t) dt$
+\end{itemize}
+\subsection{Longitud de una curva}
+
+\[
+\int\limits_{C} \,ds = \int_a^b  \| \vec{g}'(t) \|  \,dt
+\]
+\subsection{Integral de línea de campos escalares}
+Sea $f:D \subset R^n \rightarrow R$ una función continua en $H$. Sea $C$ un \textit{arco de curva suave a trozos}
+de ecuación $\vec{X} = \vec{g}(t)$ con $a \leq t \leq b$ y supongamos que $H \subset H$. Se llama integral de línea
+de $f$ a lo largo de $C$:
+
+\[
+\int\limits_{C} f \,ds = \int_a^b f(\vec{g}(t))  \| \vec{g} \, '(t) \|  \,dt
+\]
+
+\subsubsection*{Valor medio}
+El valor medio del campo escalar $f$ en $C$ es: $f_{med} = \frac{1}{Long(C)} \int\limits_{C}f \, ds$
+\subsection{Campo vectorial}
+Consideramos un campo vectorial continuo $\vec{F}:H\subset R^n \rightarrow R^n$. Físicamente 
+esta función puede interpretarse como la fuerza que ejerce el campo $\vec{F}$ en cada punto del
+dominio $H \subset R^n$ donde esté definido.
+
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.8\textwidth]{img/more.jpg}
+    \caption{Usos particulares.}
+    \label{fig:mi_imagen}
+\end{figure}
+\subsection{Integral de línea (o circulación) de un campo vectorial}
+Sea $\vec{F}:H\subset R^n \rightarrow R^n$ suponemos $\vec{F}$ continuo en $H$.
+$
+\int\limits_{C} f \,d \vec{s} = \int_a^b \vec{f}(\vec{g}(t)) . \vec{g} \, '(t)  \,dt
+$
+\subsection{Propiedades de las integrales de línea}
+
+\begin{itemize}
+    \item \textit{Campo escalar $f$:} Parametrizando $C$ de manera suave y simple $\int \limits_{Cab}f\,ds = \int \limits_{Cba}f\,ds$, la integral no depende de la parametrización que se use.
+    \item \textit{Campo vectorial $\vec{F}$:} Parametrizando $C$ de manera suave y simple la integral no depende de la parametrización siempre que se respete su dirección $\int \limits_{Cab}f\,ds = - \int \limits_{Cba}f\,ds$.
+\end{itemize}
+\subsection{Líneas de campo}
+Sea $\vec{F}:H\subset R^n \rightarrow R^n$ continuo en un campo vectorial. Diremos que la línea
+de ecuación $\vec{X}=\vec{g}(t)$, con $\vec{g}:I  \rightarrow R^n$ con $\vec{g} \, ' (t) \neq \vec{0}$
+$\forall t \in I (\vec{g} \in C^1)$ en una línea de campo de $\vec{F}$ sí: $\vec{F}(\vec{g}(t)) = \vec{g} \, ' (t)$.
+\footnote{
+Si 
+$f:U \subset R^n \rightarrow R^m$, decimos que: $f \in C^1(U)$, si:
+$f$ es diferenciable en $U$ (\textit{Diferenciable significa que podés aproximar la función por un plano (o línea) tangente muy cerca de cada punto, sin “saltos” ni esquinas})
+Su derivada (o el Jacobiando, si es multivariable) es continua en $U$.
+}
+
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.5\textwidth]{img/lineas_campo.jpg}
+    \caption{Visualización de línea de campo de $\vec{F}$, que pasa por punto $\vec{A}$.}
+    \label{fig:linea_campo}
+\end{figure}
+
+\subsubsection*{Ejemplo}
+Sí $\vec{F}(x,y)=(P(x,y), Q(x,y))$, 
+$$(P(x(t), y(t)), Q(x(t), y(t)))= (x'(t), y'(t))$$
+$$
+f(x) = \begin{cases}
+P(x(t), y(t)) = \frac{dx}{dt} \\
+ Q(x(t), y(t)) =  \frac{dy}{dt} 
+\end{cases}
+$$
+
+$$
+\frac{dx}{P(x, y)} = \frac{dy}{Q(x, y)}
+$$
+
+\subsection{Campo de gradientes. Función potencial.}
+Sea $\vec{f}:H \subset R^m \rightarrow R^m$ con $\vec{f}$ continuo en $H$ abierto y conexo, 
+si existe un campo $\phi:H \subset R^m \rightarrow R$. Tal que $\vec{f} = \nabla \phi$
+en todo punto de $H$, la circulación de $\vec{f}$, desde $\vec{A}$ hasta $\vec{B}$ a lo largo de 
+una curva suave a trozos $C \subset H$ no depende de la curva que se utilice, cumpliéndose que:
+
+$$
+\int \limits_{Cab} \vec{f} \, d\vec{s} = \phi (\vec{B}) - \phi (\vec{A})
+$$
+
+\subsubsection{Propiedades del teorema}
+\begin{itemize}
+    \item La integral en camino cerrado es nula. Dado que el arco de curva $C$ es cerrado $\oint \limits_{C} \vec{f} \, d\vec{s}  = \phi (\vec{B}) - \phi (\vec{A}) = 0$.
+    \item Sí $\phi (\vec{B}) = \phi (\vec{A})$, $\int \limits_{C} \vec{f} \, d\vec{s}  = 0$. Es más, existen  conjuntos equipotenciales (de igual potencial) $L_0$, ver ejemplo \ref{sec:ejemplo_equi}.
+    \item Cuando $\vec{f}$ es un campo de fuerzas y $\vec{f}= \nabla \phi$, se dice que $\vec{f}$ es un campo conservativo. El trabajo de un campo conservativo es nulo en camino cerrado y entre puntos de igual potencial. En física, para este tipo de campos, interesa calcular el trabajo realizado en contra del campo que –por definición– es el realizado por el campo cambiado de signo.
+\end{itemize}
+
+\subsubsection{Ejemplo de equidistantes}
+\label{sec:ejemplo_equi}
+Si $\phi(x, y) = xy - x^3 + 2 $ , 
+$
+\vec{A} = 
+\begin{pmatrix}
+0 \\ 0,5
+\end{pmatrix}
+$, 
+$
+\vec{B} = 
+\begin{pmatrix}
+1 \\ 1
+\end{pmatrix}
+$,
+$\int \limits_{C} \vec{f} \, d\vec{s}  = \phi (\vec{B}) - \phi (\vec{A}) = 2 - 2 = 0$
+
+Ambos puntos tienen potencial igual a $2$, pertenecen al \textit{conjunto equipotencial de potencial 2}.
+Dicho conjunto, $L_2$, está formado por los puntos del plano que cumplen con:
+
+$$\phi(x, y) = xy - x^3 + 2 $$
+$$\phi(x,y) = 2 \rightarrow x(y.x^2) = 0$$
+$$ L_2 = \{ (x,y) \in R²: x(y.x^2) = 0 \}$$
+
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.4\textwidth]{img/ejemplo_equis.jpg}
+    \caption{Gráfico del ejemplo.}
+    \label{fig:ejemplo_equis}
+\end{figure}
+
+\subsubsection{Conjunto simplemente conexo}
+Un conjunto conexo $H \subset R^m$ se dice que es simplemente conexo, 
+cuando toda curva cerrada trazada en
+él puede –por deformación continua– convertirse en un punto manteniéndose en el conjunto. 
+En $R^2$ un conjunto conexo es simplemente conexo, cuando no tiene agujeros.
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.4\textwidth]{img/conjunto_simp_conexo.jpg}
+    \caption{Ejemplos}
+    \label{fig:conjunto_simp_conexo}
+\end{figure}
+\subsubsection{Teoremas}
+\begin{enumerate}
+    \item Sea $\vec{f}:H \subset R^n \rightarrow R^n$
+    con $\vec{f} \in C^1$ en $H$ abierto y conexo, si existe
+    un campo $\phi : H \subset R^n \rightarrow R$ tal que 
+    $\vec{f}=\nabla \phi$ en todo punto de $H$, la matriz jacobiana de $\vec{f}$ es
+    simétrica. Es decir, \textbf{¿Existe $\phi$ en $H$?} $\rightarrow$ $D\vec{f}$ simétrica en $H$.
+    Pero $D \vec{f}$ simétrica no asegura la existencia de $\phi$.
+\end{enumerate}
+
+\subsubsection*{Ejemplo teorema I}
+Dado 
+$$
+\vec{f}(x,y) = 
+(
+\frac{-y}{x^2+y^2},
+\frac{x}{x^2+y^2}
+)
+$$ definido en $R² - \{ (0, 0) \}$
+
+
+\[
+\begin{pmatrix}
+\frac{2xy}{(x^2+y^2)^2} & \frac{-x^2+y^2}{(x^2+y^2)^2} \\
+\frac{-x^2+y^2}{(x^2+y^2)^2}  & \frac{-2xy}{(x^2+y^2)^2}
+\end{pmatrix}
+\]
+La matriz jacobiana de $\vec{f}$ es simétrica y continua ($\vec{f} \in C^1 \rightarrow D\vec{f} \, continua$) en su dominio.
+\footnote{Simetría: los elementos fuera de la diagonal son iguales.}
+
+Si ahora se calcula $\int \limits_{C} \vec{f} \, d \vec{s}$, donde $C$ tiene ecuación
+$g(t) = (cos (t), sen(t))$ con $0 \leq y \leq 2 \pi$:
+
+$$
+\int_{0}^{2 \pi} \vec{f}(\vec{g}(t)).\vec{g} \, '(t) \, dt = \int_{0}^{2 \pi} (-sen (t), cos(t))(-sen(t), cos(t))dt=2\pi \neq 0
+$$
+
+Como la integral en camino cerrado resultó no nula, se concluye que $\vec{f}$ no admite función potencial en su dominio 
+(si existiera $\phi$, toda integral en camino cerrado se anularía).
+\footnote{Un campo vectorial $\vec{f}$ tiene función potencial en un dominio 
+$U$ si y solo si toda integral en camino cerrado es cero y el dominio es simplemente conexo.}
