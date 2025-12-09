@@ -156,6 +156,10 @@ En $R^2$ un conjunto conexo es simplemente conexo, cuando no tiene agujeros.
     $\vec{f}=\nabla \phi$ en todo punto de $H$, la matriz jacobiana de $\vec{f}$ es
     simétrica. Es decir, \textbf{¿Existe $\phi$ en $H$?} $\rightarrow$ $D\vec{f}$ simétrica en $H$.
     Pero $D \vec{f}$ simétrica no asegura la existencia de $\phi$.
+    
+    \item Dado $\vec{f}:H \subset R^n \rightarrow R^n$, si $D\vec{f}$ es continua y simétrica en 
+    $H$ abierto y simplemente conexo, entonces existe $\phi$ tal que $\vec{f}=\nabla \phi$ en todo punto de $H$. 
+    Sin embargo, un campo puede tener función potencial en un conjunto que no es simplemente conexo.
 \end{enumerate}
 
 \subsubsection*{Ejemplo teorema I}
@@ -189,3 +193,81 @@ Como la integral en camino cerrado resultó no nula, se concluye que $\vec{f}$ n
 (si existiera $\phi$, toda integral en camino cerrado se anularía).
 \footnote{Un campo vectorial $\vec{f}$ tiene función potencial en un dominio 
 $U$ si y solo si toda integral en camino cerrado es cero y el dominio es simplemente conexo.}
+
+\subsubsection{Obtención de la función potencial}
+Suponemos que existe $\phi$ tal que $\vec{f}=\nabla \phi$ en $H \subset R^n$, 
+dado $\vec{f} = (f_1, ..., f_m)$ deberá cumplirse:
+
+$$
+\vec{f}=  (f_1, ..., f_m)
+= (\phi '_{x_{1}}, ..., \phi '_{x_{m}}) =
+\begin{cases}
+\phi '_{x_{1}} = f_1\\
+...\\
+\phi '_{x_{m}} = f_m
+\end{cases}
+$$
+\subsubsection*{Ejemplo I}
+Dado $\vec{f}:R^2 \rightarrow R^2 / \vec{f}(x,y)=(2xy+y, x^2+x+1)$, analice si admite 
+función potencial en su dominio y, en caso afirmativo, determínela.
+
+
+\[
+\begin{pmatrix}
+  2y & 2x + 1 \\
+  2x + 1 & 0
+\end{pmatrix}
+\] es continua y simétrica (y todo el espacio es abierto y simplemente conexo) en $R^2 \rightarrow \exists \phi$.
+Para hallar $\phi$ planteamos: 
+$\begin{cases} 
+    \phi '_{x} = 2xy+y\\
+    \phi '_{y} = x^2+x+1
+\end{cases}$ y podemos integrar ambas partes, tal que:
+
+\begin{equation}
+\int \phi '_{x} = \int 2xy + y \, dx = x^2y + xy + \lambda (y) \therefore \phi = x^2y + xy + \lambda (y)
+\label{eq:funcion_pot_con_lambda}
+\end{equation}
+
+
+Para averiguar $\lambda (y)$ usamos $\phi '_{y}$, por ende, derivamos \ref{eq:funcion_pot_con_lambda} en $y$ y la igualamos a $\phi '_{y}$.
+
+$$
+x^2 + x + \lambda ' (y) = x^2 + x + 1 \therefore \lambda ' (y) = 1 \rightarrow \int \lambda ' (y) \, dy= \int 1 \, dy = y + C
+$$
+
+$$
+\phi (x,y) = x^2y + xy + y + C
+$$
+
+\subsubsection*{Ejemplo II}
+Dado $\vec{f}: R^3 \rightarrow R^3 / \vec{f}(x,y,z) = (z + 4 yz^2, z + 4xz^2, x + y + 8xyz + 2)$, 
+analice si admite función potencial en su dominio y, en caso afirmativo, determínela.
+
+
+En este caso $D\vec{f}= \begin{pmatrix}
+    0 & 4z^2 & 1+8yz \\
+    4z^2 & 0 + 1+8xz \\
+    1+8yz & 1+8xz & 8xy 
+\end{pmatrix}$ es continua y simétrica en $R^3 \rightarrow \exists \phi$
+
+
+Y como $\begin{cases}
+    \phi '_{x} =  z + 4yz^2\\
+    \phi '_{y} = z + 4xz^2\\
+    \phi '_{z} = x + y + 8xyz + 2
+\end{cases}$, podemos primero integrar $\phi '_{x}$, por ejemplo.
+$$ \int \phi '_{x} \, dx = \int z + 4yz^2 \, dx  = zx + 4yz^2 + \lambda(y,z) \therefore \phi = zx + 4xyz^2 + \lambda(y,z)$$
+
+Derivamos $\phi$ con respecto a $y$, para averiguar $\lambda(y,z)$
+
+$$\phi '_{y} = 4xz^2 + \lambda '_y (y,z) =  z + 4xz^2  \therefore \lambda '_y (y,z) = z , \int \lambda '_y (y,z) \, dy= \int z \, dy$$
+
+$$\lambda (y, z)= yz + \mu (z) \therefore \phi = zx + 4xyz^2 + yz + \mu(z)$$
+
+Derivamos $\phi$ con respecto a $z$, para averiguar $\mu(z)$
+$$\phi '_{z} = x + 8xyz +y + \mu ' (z) = x +y +8xyz + 2 \therefore \mu'(z) = 2, \int \mu'(z)\,dz = \int 2 \, dz = 2z + C$$
+
+$$
+\phi = zx + 4xyz^2 + yz + 2z + C
+$$
