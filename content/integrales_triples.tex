@@ -1,0 +1,76 @@
+\section{Integrales triples}
+
+Una región $R$ es de tipo I si es de la
+$$R = \{(x,y,z) \in R^3 : z_1 (x,y)\leq z \leq z_2(x,y) \land (x, y) \in D\}$$
+con $D\in R^2$ acotada y con frontera de área nula y $z_1$ y $z_2$ continuas en $D$.
+
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.3\textwidth]{img/dominio_int_tri.png}
+    \label{fig:dominio_int_tri}
+\end{figure}
+
+$$
+\integralTripleEnD =
+\integralTripleGeneral{a}{b}{c}{d}{z_{2}(x,y)}{z_{1}(x,y)}{f(x,y,z)} 
+\difTriple{z}{y}{x}
+$$
+
+
+\subsection{Aplicaciones}
+\begin{itemize}
+    \item Sí $f(x,y,x) = 1$, $\forall(x,y,z) \in D$, Volúmen(D) = $\integralTripleEnAlgoConFuncion{D}{}{x}{y}{z}$
+    \item Sí $\delta(x,y,z)=$ "densidad volumétrica de masa", entonces Masa(D) = $\integralTripleEnAlgoConFuncion{D}{\delta(x,y,z)}{x}{y}{z}$
+    \item Sí $f(x,y,z)$ es cualquier función continua definida en $D$, $f_{med} = \frac{1}{Volumen(D)}\integralTripleEnAlgoConFuncion{D}{f(x,y,z)}{x}{y}{z}$
+\end{itemize}
+
+
+\subsection{Cambio de variable}
+Siendo $\vec{h} (u,v,w) = (x(u,v,w),y(u,v,w),z(u,v,w))$
+\begin{enumerate}
+    \item $f$ es integrable en $D$.
+    \item $\vec{h} \in C^1$ en un conjunto abierto que incluya a $D^*$.
+    \item $J(u,v, w) \neq 0$ en todo punto de $D^*$
+    \item Existe $\vec{h}^{-1}$ tal que $\forall (x,y,z) \in D$, $\vec{h}^{-1}(x,y,z)=(u,v,w) \in D^*$
+\end{enumerate}
+$$
+\integralTripleEnD =
+\integralTripleEnAlgoConFuncion{D^*}{f(x(u,v,w),y(u,v,w),z(u,v,w)) |J(u,v,w)|}{u}{v}{w}
+$$
+
+\subsubsection{Coordenadas cilíndricas}
+$$
+\begin{cases}
+    x = r cos(\theta) \\
+    y = r sen({\theta})\\
+    z = z
+\end{cases}
+$$
+
+$$
+\vec{h}(r, \theta, z) = (r cos(\theta), r sen({\theta}), z)
+$$
+
+$$
+J(r, \theta, z) = \begin{vmatrix}
+   cos(\theta) & -r sen(\theta) & 0  \\
+   sin(\theta) & cos(\theta) & 0 \\ 
+   0 & 0 & 1
+\end{vmatrix} = r
+$$
+
+$$
+\integralTripleEnD =
+\integralTripleEnAlgoConFuncion{D^*}{f(r cos(\theta),r sin(\theta),z) r}{r}{\theta}{z}
+$$
+
+\subsubsection{Coordenadas esféricas}
+$$
+\begin{cases}
+    x = \rho cos(\theta)sen(\phi) \\
+    y = \rho sen(\theta)sen(\phi) \\
+    z = \rho cos(\phi)
+\end{cases}
+$$
+donde $0 \leq \rho < \infty$, $0 \leq \theta < 2\pi$, $0 \leq \rho \leq \pi$.
+$$J(\rho, \phi ,\theta ) = \rho^2 sen(\phi)$$

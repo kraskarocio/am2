@@ -2,3 +2,11 @@
 \newcommand{\integralDobleEnD}{\int \int \limits_{D} f(x,y) \, dx \, dy}
 % #1: dominio, #2 var1: (ej:x), #3 var2 (ej:y), #4 : inside (ej:f(x,y))
 \newcommand{\integralDobleGeneral}[4]{\int \int \limits_{#1}  #4 \, d#2 \, d#3 }
+\newcommand{\integralTripleEnD}{\int \int \int \limits_{D} f(x,y, z) \, dx \, dy \, dz}
+
+% #1 lim arriba, #2 lim abajo, #3 lim arriba, #4 lim abajo, #5 lim arriba, #6 lim abajo
+% #7 inside, #8, #9, #10
+\newcommand{\integralTripleGeneral}[7]{\int^{#1}_{#2} \int^{#3}_{#4} \int^{#5}_{#6} #7 }
+\newcommand{\difTriple}[3]{ \, d#1 \, d#2 \, d#3}
+
+\newcommand{\integralTripleEnAlgoConFuncion}[5]{\int \int \int \limits_{#1} #2 \, d#3 \, d#4 \, d#5}
