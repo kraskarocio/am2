@@ -1,0 +1,98 @@
+\section{Integrales dobles}
+Teorema de Fubini: Sea $f:H=[a,b]\times[c,d]$ una función acotada. Si existen
+$$\integralDobleEnD = \int ^b_a (\int ^d_c f(x,y)\, dy) \, dx$$
+\subsection{Cálculo de la integral doble en una región simple}
+\subsubsection{Región simple tipo 1 (RS1)}
+$$ RS1 = \{ (x,y) \in R^2 / y_1(x) \leq y \leq y_2(x) \land a \leq x \leq b\}$$
+
+\subsubsection{Región simple tipo 2 (RS2)}
+$$ RS2 = \{ (x,y) \in R^2 / x_1(y) \leq x \leq x_2(y) \land a \leq y \leq b\}$$
+
+
+
+Una región simple es tipo 3 ($RS3$) cuando es $RS1$ y $RS2$, por ejemplo, un rectángulo o un círculo.
+
+\subsection{Propiedades}
+
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.9\textwidth]{img/propiedades_int_dobles.jpg}
+    \label{fig:prop_int_dobles}
+\end{figure}
+
+\subsection{Aplicaciones}
+
+\begin{itemize}
+    \item Sí $f(x,y) = 1 \, \forall(x,y) \in D$ entonces $Area(D)= \int \int \limits_{D} \, dx \, dy$.
+    \item Sí $\delta (x,y)$ es la densidad superficial de masa, entonces $Masa(D) =  \int \int \limits_{D} \delta(x,y) \, dx \, dy$.
+    \item Si $f(x,y)$ es cualquier función continua definida en $D$ entonces $f_{med}=\frac{1}{Area(D)} \int \int \limits_{D} f(x,y) \,dx \, dy$.
+    \item Calcular el centro de masa de una chapa: 
+    $X_G=\frac{M_x}{Masa(D)} = \frac{\int \int \limits_{D} x\delta(x,y) \,dx \,dy }{\int \int \limits_{D} \delta(x,y) \,dx \,dy}$, y
+    $Y_G=\frac{M_y}{Masa(D)} = \frac{\int \int \limits_{D} y\delta(x,y) \,dx \,dy }{\int \int \limits_{D} \delta(x,y) \,dx \,dy}$
+\end{itemize}
+
+\subsection{Cambio de variables en integrales dobles}
+Esto se utiliza cuando $D$ tiene una forma rara.
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.4\textwidth]{img/dominios.png}
+    \label{fig:dominios}
+\end{figure}
+Dada la integral $\integralDobleEnD$ se desea calcularla
+aplicando el cambio de variables definido por: $\vec{h}(u,v)=(x(u,v), y(u,v))$
+
+
+Denotando $J(u,v) = det(D\vec{h}(u,v))$ al jacobiano de la transformación, si se cumple que:
+\begin{enumerate}
+    \item $f$ es integrable en $D$.
+    \item $\vec{h} \in C^1$ en un conjunto abierto que incluya a $D^*$.
+    \item $J(u,v) \neq 0$ en todo punto de $D^*$
+    \item Existe $\vec{h}^{-1}$ tal que $\forall (x,y) \in D$, $\vec{h}^{-1}(x,y)=(u,v) \in D^*$
+\end{enumerate}
+$$
+\integralDobleEnD = \integralDobleGeneral{D^*}{u}{v}{f(\vec{h}(u,v)) |J(u, v)|}
+$$
+Es denominada la fórmula de cambio de variables en integrales dobles.
+
+\subsubsection{Transformación líneal}
+Si $(x,y) = \vec{h}(u,v)=(au+bv, cu + dv)$ con $a,b,c,d \in R$ entonces:
+
+$$
+J(u, v)= 
+\begin{vmatrix}
+X'_u(u,v) & X'_v(u,v) \\
+Y'_u(u,v) & Y'_v(u,v)
+\end{vmatrix}
+=
+\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}
+= ad - bc \neq 0
+$$
+
+$$
+\integralDobleEnD =
+\integralDobleGeneral{D^*}{u}{v}{f(au+bv, cu+dv) |ad - bc|}
+$$
+
+\subsubsection{Coordenadas polares}
+Dado $\begin{cases}
+    x = r cos(\theta)\\
+    y = r sen(\theta)
+\end{cases}$ donde $0 \leq r < \infty$, $0 \leq \theta < 2\pi$, por ende 
+$\vec{h}(r, \theta)=(r cos(\theta), r sen(\theta))$
+
+
+$$
+J(r, \theta)= 
+\begin{vmatrix}
+cos(\theta) & - r sen(\theta) \\
+sen(\theta) & r cos(\theta)
+\end{vmatrix} = r
+$$
+
+$$
+\integralDobleEnD = 
+\integralDobleGeneral{D^*}{r}{\theta}{f(r cos(\theta), r sen(\theta)) r}
+$$
