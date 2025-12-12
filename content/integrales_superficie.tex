@@ -1,0 +1,128 @@
+\section{Integrales de superficie}
+
+\subsection{Cálculo del área de una superficie}
+Dada la superficie $\Sigma$ de ecuación $\vec{X}=\vec{F}(u,v)$ con $(u,v) \in D$, si $\Sigma$ es sueve y simple,
+el área de la misma se puede calcular:
+$$Area(D) = \integralDobleGeneral{D}{||\vec{F}'_u(u,v) \times \vec{F}'_v(u,v)||}{u}{v}$$
+con $D \in R^2$ acotado y de frontera de área nula.
+\subsubsection*{Ejemplazo}
+Calcule el área de la superfice de ecuación $z=xy$
+con $(x,y)\in D = \{ (x,y) \in R^2 : x^2+ y^2 \leq 9 \}$
+
+$$
+\vec{F} (x,y) = (x,y,xy) \, (x,y) \in D
+$$
+
+$$
+\vec{F}'_x(x,y) \times \vec{F}'_y(x,y)= 
+\begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k}\\
+1 & 0 & y \\
+0&1&x
+\end{vmatrix}
+= (-y, -x, 1)
+$$
+
+$$
+\therefore ||\vec{F}'_x(x,y) \times \vec{F}'_y(x,y)||
+= \sqrt{y^2+x^2+1}
+$$
+
+$$
+Area(\Sigma) = 
+\integralDobleGeneral{D}{||\vec{F}'_x(x,y) \times \vec{F}'_y(x,y)||}{x}{y}
+=
+\integralDobleGeneral{D}{\sqrt{y^2+x^2+1}}{x}{y}
+$$
+
+Realizamos un cambio de variable $\begin{cases}
+x = r cos(\theta) \\ 
+y = r sen(\theta)
+\end{cases}$
+
+$$\sqrt{1+(rcos(\theta))^2 +(rsen(\theta))^2}$$
+$$\sqrt{1+r^2cos(\theta)^2 +r^2sen(\theta)^2}$$
+$$\sqrt{1+(r^2) (cos^2(\theta) + sen^2(\theta))}$$
+$$\sqrt{1 + r^2}$$
+y en cuanto a los límites de integración como $D$ está definida
+en $r^2cos(\theta)^2 +r^2sen(\theta)^2 \leq 9$, $r^2 \leq 9$, $r \leq 3$
+por ende $0 < r \leq 3$ y $0 \leq \theta < 2\pi$.
+
+$$
+\integralDobleConLimites{2\pi}{0}{3}{0}{\sqrt{1 + r^2} r}{r}{\theta}
+$$
+\subsection{Integral de superficie de campo escalar}
+Dado $f:H \subset R^n \rightarrow R^n$, suponiendo un conjunto continuo en $H$ (donde está incluida
+la superficie $\Sigma$), el símbolo $\int \int \limits_{\Sigma} f \, d\sigma$ representa
+la integral de superficie de $f$ en $\Sigma$.
+\begin{itemize}
+    \item Donde $f$ se evalúa en todos los puntos de $\Sigma$
+    \item $d\sigma = || \vec{F}'_u(u,v) \times \vec{F}'_v(u,v)|| \, du \, dv$ es el diferencial de área de superficie,
+\end{itemize}
+
+$$
+\integralDobleGeneral{D}{f(\vec{F}(u,v)) || \vec{F}'_u(u,v) \times \vec{F}'_v(u,v) ||}{u}{v}
+$$
+\subsection{Aplicaciones}
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.9\textwidth]{img/int_sup_ap.png}
+    \label{fig:int_sup_ap}
+\end{figure}
+\subsubsection*{Ejemplazo}
+Calcule el valor medio de $f(x,y,z) = yz$ sobre el trozo de plano $\Sigma$ de ecuación $z=3x$ con 
+$D: x^2 + y^2 \leq 2y$.
+
+$$\vec{F}(x,y)= (x, y, 3x) , (x,y) \in D$$ 
+$$f(\vec{F}(x,y)) = f(x, y, 3x) = 3yx$$ 
+
+$$
+||\vec{F}'_x(x,y) \times \vec{F}'_y(x,y)||=
+\begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k}\\
+1&0&3\\
+0&1&0
+\end{vmatrix}
+= || (-3, 0, 1) || = \sqrt{10}
+$$
+
+$$
+Area(\Sigma) = 
+\sqrt{10} \integralDobleGeneral{D}{}{x}{y}
+$$
+
+$$
+3\sqrt{10} \integralDobleGeneral{D}{yx}{x}{y}
+$$
+
+$$
+\begin{cases}
+    x=rcos(\theta) \\
+    y=rsen(\theta)
+\end{cases}
+$$
+
+como $D: x^2+y^2 \leq 2y$, $D: r^2 \leq 2 r sen(\theta)$, $D: 0 \leq r \leq 2sen(\theta)$
+Y como $x^2+(y-1)^2 \leq 1$, el centro del círculo está en $(0,1)$ y tiene $r = 1$, por ende,
+$0 \leq \theta \leq \pi$
+
+
+
+\textit{Terminar\dots}
+
+\subsection{Integral de superficie de campo vectorial (flujo)}
+Dado $\vec{f}:H \subset R^n \rightarrow R^n$, suponiendo que $\vec{f}$ es continuo en $H$
+(donde está incluida la superficie $\Sigma$) $\int \int \limits_{\Sigma} \vec{f} \hat{n} \, d\sigma$
+representa la integral de superficie o de flujo de $\vec{f}$ a través de $\Sigma$.
+
+$$
+\int\int\limits_{\Sigma} \vec{f} \hat{n} \, d\sigma =
+\integralDobleGeneral{\Sigma}{\vec{f}(\vec{F}(u,v)). \vec{F}'_u(u,v) \times \vec{F}'_v(u,v)}{u}{v}
+$$
+
+
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.4\textwidth]{img/n.png}
+    \label{fig:n}
+\end{figure}
