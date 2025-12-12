@@ -1,0 +1,43 @@
+\section{Teorema de Green}
+
+Sea un cuerpo $D$ , su superficie frontera $\partial D$ y un campo $\vec{f}$ , si:
+
+\begin{enumerate}
+    \item $D$ se la puede subdividir en una cantidad finita de regiones tipo $RS3$ del plano
+    \item $\partial D$ es una curva cerrada, suave a trozos y simple, orientada en
+sentido positivo.
+    \item $\vec{f} \in C^1$ en $D$ y $\partial D$ , o en un conjunto abierto que las incluya.
+\end{enumerate}
+$$
+\vec{f}(x,y) = (P(x,y), Q(x,y))
+$$
+
+$$
+\oint _{\partial D^+} \vec{f} \, d\vec{s} = \integralDobleGeneral{D}{Q'_x(x,y) - P'_y(x,y)}{x}{y}
+$$
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.3\textwidth]{img/teo_green1.png}
+    \label{fig:teo_green1}
+\end{figure}
+
+Si la región $D$ fuera la de la figura \ref{fig:teo_green2}, su frontera $\partial D = C_1 \cup C_2$
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=0.3\textwidth]{img/teo_green2.png}
+    \label{fig:teo_green2}
+\end{figure}
+
+
+
+
+\texttt{Ver páginas 2 y 3 de Xournal++ para ejemplos}
+\subsection{Aplicación del teorema de Green al cálculo de área}
+Supongamos que se cumplen las hipótesis del teorema en el campo: $\vec{f}(x,y) = (P(x,y), Q(x,y))$
+y $Q_x(x,y) - P_y(x,y) = k, k \neq 0, k \in R$
+$$
+Area(D) = \frac{1}{k} \oint_{\partial D^+} \vec{f} \, d\vec{s}
+$$
+
+
+\texttt{Ver páginas 4 y 5 de Xournal++ para ejemplos}
