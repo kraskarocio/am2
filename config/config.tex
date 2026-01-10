@@ -1,4 +1,6 @@
 \geometry{margin=0.5cm}
+\setlist[itemize]{label=--}
+
 \newcommand{\integralDobleEnD}{\int \int \limits_{D} f(x,y) \, dx \, dy}
 % #1: dominio, #2 var1: (ej:x), #3 var2 (ej:y), #4 : inside (ej:f(x,y))
 \newcommand{\integralDobleGeneral}[4]{\int \int \limits_{#1}  #2 \, d#3 \, d#4 }
@@ -12,3 +14,16 @@
 \newcommand{\difTriple}[3]{ \, d#1 \, d#2 \, d#3}
 
 \newcommand{\integralTripleEnAlgoConFuncion}[5]{\int \int \int \limits_{#1} #2 \, d#3 \, d#4 \, d#5}
+
+\newcommand{\entornoDeA}{E(A)}
+\newcommand{\esferaAbierta}{E(A, r)}
+\newcommand{\entornoReducidoDeA}{E^{*}(A)}
+
+
+\newtcolorbox{nota}[1][]{
+  colback=gray!10,
+  colframe=gray!70,
+  fonttitle=\bfseries,
+  enhanced,
+  #1
+}
