@@ -7,3 +7,37 @@
     \item $\entornoReducidoDeA$ es el entorno de $A$ sin el punto $A$.
 \end{itemize}
 \end{nota}
+
+\subsection*{Puntos}
+Siendo $S \subset R^n$ y $A \in R^n$:
+\begin{itemize}
+    \item $A$ es un \textbf{punto interior} de $S$ si existe un $\entornoDeA$ contenido en $S$.
+    \item $A$ es \textbf{punto exterior} a $S$ cuando existe algún $\entornoDeA$ que no tiene puntos de $S$.
+    \item $A$ es \textbf{punto frontera} de $S$ cuando en todo $\entornoDeA$ 
+    existe algún punto de $S$ y alguno que no pertenece a $S$.
+    \item Un punto $A \in S \subset R^n$ es \textbf{punto aislado} de $S$ cuando existe algún 
+    $\entornoReducidoDeA$ que no tiene puntos de $S$.
+    \item Un punto $A$ es \textbf{punto de acumulación} de $S$ cuando en todo $\entornoReducidoDeA$ existe algún punto de $S$.
+\end{itemize}
+\begin{figure}[H] 
+    \centering    
+    \includegraphics[width=1\textwidth]{img/puntos.png}
+    \label{fig:puntos}
+\end{figure}
+\subsection*{Tipos de conjuntos de puntos}
+\begin{itemize}
+    \item El \textbf{interior} de $S$ es el conjunto de sus puntos interiores.
+    \item El \textbf{exterior} de $S$ es el conjunto de sus puntos exteriores.
+    \item La \textbf{frontera} de $S$ es el conjunto de sus puntos frontera. Denotaremos con $\partial S$ a la frontera de $S$.
+\end{itemize}
+\subsection*{Conjuntos de puntos}
+\begin{itemize}
+    \item $S \subset R^n$ es un \textbf{conjunto abierto} cuando todos sus puntos son interiores.
+    \item $S \subset R^n$ es un \textbf{conjunto cerrado} cuando contiene a todos sus puntos de acumulación.
+    \item $S \subset R^n$ es un \textbf{conjunto acotado} cuando se lo puede incluir en una esfera abierta con centro en el origen y
+radio finito.
+    \item $S \subset R^n$ es un \textbf{conjunto compacto} cuando es cerrado y acotado.
+    \item $S \subset R^n$ es un \textbf{conjunto conexo} cuando dados dos puntos cualesquiera $A,B \in S$, “es posible ir
+desde uno al otro desplazándose por puntos de $S$”. 
+\end{itemize}
+
