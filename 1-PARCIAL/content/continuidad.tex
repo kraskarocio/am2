@@ -1,5 +1,5 @@
 \section{Funciones continuas}
-Sea $f:D \subset R^n \to R^m$. Se dice que $f$ es \textbf{continua} en un punto $X_0 \in D$ si:
+Sea $f:D \subset \mathbb{R}^n \to \mathbb{R}^m$. Se dice que $f$ es \textbf{continua} en un punto $X_0 \in D$ si:
 \begin{itemize}
     \item $\exists \lim_{X \to X_0} f(X) = L$
     \item $f(X_0) = L$
@@ -21,9 +21,9 @@ es continua.
 \subsection{Teoremas de continuidad}
 
 \subsubsection{Teorema I: composición de funciones continuas}
-Sea $f:D \subset R^n \to R^m$ y $g:E \subset R^m \to R^p$ y supongamos que
+Sea $f:D \subset \mathbb{R}^n \to \mathbb{R}^m$ y $g:E \subset \mathbb{R}^m \to \mathbb{R}^p$ y supongamos que
 $f(D) \subset E$. Si $f$ es continua en $X_0 \in D$ y $g$ es continua en
-$f(X_0) \in E$, entonces la función compuesta $g \circ f:D \to R^p$, definida por 
+$f(X_0) \in E$, entonces la función compuesta $g \circ f:D \to \mathbb{R}^p$, definida por 
 $h(X) = (g \circ f)(X) = g(f(X))$ es continua en $X_0$.
 
 \begin{figure}[H] 
@@ -35,14 +35,14 @@ $h(X) = (g \circ f)(X) = g(f(X))$ es continua en $X_0$.
 \subsubsection{Teorema I: curvas}
 
 \begin{itemize}
-    \item Sea $f:R^n \to R^m$ una función continua y $C \subset R^n$ un conjunto conexo.
-    Entonces el conjunto $f(C) \subset R^m$ es conexo.
-    \item Sea $f:R^n \to R^m$ una función continua y $C \subset R^n$ un conjunto compacto.
-    Entonces el conjunto $f(C) \subset R^m$ es compacto.
+    \item Sea $f:   \mathbb{R}^n \to \mathbb{R}^m$ una función continua y $C \subset \mathbb{R}^n$ un conjunto conexo.
+    Entonces el conjunto $f(C) \subset \mathbb{R}^m$ es conexo.
+    \item Sea $f:\mathbb{R}^n \to \mathbb{R}^m$ una función continua y $C \subset \mathbb{R}^n$ un conjunto compacto.
+    Entonces el conjunto $f(C) \subset \mathbb{R}^m$ es compacto.
 \end{itemize}
 
 \begin{nota}[colback=green!5,colframe=green!80, title=Definición importante]
-Sea $\vec{g}: I \subset R \to R^n$. Entonces si 
+Sea $\vec{g}: I \subset \mathbb{R} \to \mathbb{R}^n$. Entonces si 
 $
 \begin{cases}
     I \text{ es un intervalo} \\
@@ -65,7 +65,7 @@ al conjunto imagen de $\vec{g}$ se lo llamará \textbf{curva continua} en $R^n$.
 
 
 \begin{nota}[colback=blue!5,colframe=blue!60, title=Definiciones]
-Dada una curva $C \subset R^m$ de ecuación $\vec{X}=\vec{g}(t)$ definimos:
+Dada una curva $C \subset \mathbb{R}^m$ de ecuación $\vec{X}=\vec{g}(t)$ definimos:
 \begin{itemize}
     \item Un punto $A = \vec{g}(t_0)$ es un \textbf{punto regular} de la curva
     cuando $\vec{g}$ es derivable en $t_0$ y $\vec{g}'(t_0) \neq 0$. Una curva es
